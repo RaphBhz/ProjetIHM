@@ -1,0 +1,13 @@
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\bin\Debug\ProjetIHM.exe.config
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\bin\Debug\ProjetIHM.exe
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\bin\Debug\ProjetIHM.pdb
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\bin\Debug\ProjetIHM.xml
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.vbprojAssemblyReference.cache
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.Memory.resources
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.Resources.resources
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.vbproj.GenerateResource.cache
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.vbproj.CoreCompileInputs.cache
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.exe
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.xml
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.pdb
+C:\Users\Raph\Documents\GitHub\ProjetIHM\ProjetIHM\obj\Debug\ProjetIHM.Accueil.resources
