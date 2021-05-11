@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Memory
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Memory
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Memory))
@@ -51,8 +51,6 @@ Partial Class Memory
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.gbxCartes = New System.Windows.Forms.GroupBox()
         Me.lblTimer = New System.Windows.Forms.Label()
-        Me.btnTestTimer = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.carte11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.carte13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.carte12, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -333,32 +331,12 @@ Partial Class Memory
         Me.lblTimer.TabIndex = 25
         Me.lblTimer.Text = "10 : 00"
         '
-        'btnTestTimer
-        '
-        Me.btnTestTimer.Location = New System.Drawing.Point(317, 8)
-        Me.btnTestTimer.Name = "btnTestTimer"
-        Me.btnTestTimer.Size = New System.Drawing.Size(75, 23)
-        Me.btnTestTimer.TabIndex = 26
-        Me.btnTestTimer.Text = "TestTimer"
-        Me.btnTestTimer.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(81, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 27
-        Me.Label1.Text = "Label1"
-        '
         'Memory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(504, 593)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnTestTimer)
         Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.gbxCartes)
         Me.Controls.Add(Me.lblNomJoueur)
@@ -420,6 +398,4 @@ Partial Class Memory
     Friend WithEvents Timer As Timer
     Friend WithEvents gbxCartes As GroupBox
     Friend WithEvents lblTimer As Label
-    Friend WithEvents btnTestTimer As Button
-    Friend WithEvents Label1 As Label
 End Class

@@ -27,7 +27,7 @@
         End If
     End Sub
 
-    Private Sub btnTestTimer_Click(sender As Object, e As EventArgs) Handles btnTestTimer.Click
+    Private Sub btnTestTimer_Click(sender As Object, e As EventArgs) 
         If Timer.Enabled = False Then
             Timer.Enabled = True
             Timer.Start()
