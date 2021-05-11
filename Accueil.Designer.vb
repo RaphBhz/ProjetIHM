@@ -34,7 +34,7 @@ Partial Class Accueil
         'cbxNom
         '
         Me.cbxNom.FormattingEnabled = True
-        Me.cbxNom.Location = New System.Drawing.Point(141, 81)
+        Me.cbxNom.Location = New System.Drawing.Point(108, 81)
         Me.cbxNom.Name = "cbxNom"
         Me.cbxNom.Size = New System.Drawing.Size(121, 21)
         Me.cbxNom.TabIndex = 0
@@ -42,7 +42,7 @@ Partial Class Accueil
         'lblDemandeNom
         '
         Me.lblDemandeNom.AutoSize = True
-        Me.lblDemandeNom.Location = New System.Drawing.Point(42, 84)
+        Me.lblDemandeNom.Location = New System.Drawing.Point(9, 84)
         Me.lblDemandeNom.Name = "lblDemandeNom"
         Me.lblDemandeNom.Size = New System.Drawing.Size(93, 13)
         Me.lblDemandeNom.TabIndex = 1
@@ -50,7 +50,7 @@ Partial Class Accueil
         '
         'btnJouer
         '
-        Me.btnJouer.Location = New System.Drawing.Point(115, 122)
+        Me.btnJouer.Location = New System.Drawing.Point(82, 122)
         Me.btnJouer.Name = "btnJouer"
         Me.btnJouer.Size = New System.Drawing.Size(75, 23)
         Me.btnJouer.TabIndex = 2
@@ -59,7 +59,7 @@ Partial Class Accueil
         '
         'btnScores
         '
-        Me.btnScores.Location = New System.Drawing.Point(115, 152)
+        Me.btnScores.Location = New System.Drawing.Point(82, 152)
         Me.btnScores.Name = "btnScores"
         Me.btnScores.Size = New System.Drawing.Size(75, 23)
         Me.btnScores.TabIndex = 3
@@ -68,7 +68,7 @@ Partial Class Accueil
         '
         'btnQuitter
         '
-        Me.btnQuitter.Location = New System.Drawing.Point(115, 182)
+        Me.btnQuitter.Location = New System.Drawing.Point(82, 182)
         Me.btnQuitter.Name = "btnQuitter"
         Me.btnQuitter.Size = New System.Drawing.Size(75, 23)
         Me.btnQuitter.TabIndex = 4
@@ -79,7 +79,7 @@ Partial Class Accueil
         '
         Me.lblTitre.AutoSize = True
         Me.lblTitre.Font = New System.Drawing.Font("Pristina", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitre.Location = New System.Drawing.Point(71, 9)
+        Me.lblTitre.Location = New System.Drawing.Point(38, 9)
         Me.lblTitre.Name = "lblTitre"
         Me.lblTitre.Size = New System.Drawing.Size(176, 52)
         Me.lblTitre.TabIndex = 5
@@ -89,7 +89,7 @@ Partial Class Accueil
         '
         Me.lblSousTitre.AutoSize = True
         Me.lblSousTitre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSousTitre.Location = New System.Drawing.Point(95, 48)
+        Me.lblSousTitre.Location = New System.Drawing.Point(62, 48)
         Me.lblSousTitre.Name = "lblSousTitre"
         Me.lblSousTitre.Size = New System.Drawing.Size(110, 13)
         Me.lblSousTitre.TabIndex = 6
@@ -99,7 +99,7 @@ Partial Class Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(312, 228)
+        Me.ClientSize = New System.Drawing.Size(248, 223)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblSousTitre)
         Me.Controls.Add(Me.lblTitre)
