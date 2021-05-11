@@ -16,7 +16,6 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
         ticks += 1
         lblTimer.Text = Math.Round((timeMax - ticks) / 60) - 1 & " : " & Math.Round((timeMax - ticks) Mod 60)
-        Label1.Text = ticks
     End Sub
 
     Private Sub carte11_Click(sender As Object, e As EventArgs) Handles carte11.Click
@@ -27,7 +26,7 @@
         End If
     End Sub
 
-    Private Sub btnTestTimer_Click(sender As Object, e As EventArgs) 
+    Private Sub btnTestTimer_Click(sender As Object, e As EventArgs)
         If Timer.Enabled = False Then
             Timer.Enabled = True
             Timer.Start()
