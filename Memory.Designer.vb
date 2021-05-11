@@ -69,12 +69,13 @@ Partial Class Memory
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lblNomJoueur)
         Me.Controls.Add(Me.btnAbandon)
         Me.Controls.Add(Me.lblTemps)
         Me.Controls.Add(Me.lblJoueur)
         Me.Name = "Memory"
-        Me.Text = "Form1"
+        Me.Text = "Memory"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

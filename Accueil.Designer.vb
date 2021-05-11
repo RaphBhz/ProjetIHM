@@ -27,12 +27,14 @@ Partial Class Accueil
         Me.btnJouer = New System.Windows.Forms.Button()
         Me.btnScores = New System.Windows.Forms.Button()
         Me.btnQuitter = New System.Windows.Forms.Button()
+        Me.lblTitre = New System.Windows.Forms.Label()
+        Me.lblSousTitre = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cbxNom
         '
         Me.cbxNom.FormattingEnabled = True
-        Me.cbxNom.Location = New System.Drawing.Point(111, 6)
+        Me.cbxNom.Location = New System.Drawing.Point(141, 81)
         Me.cbxNom.Name = "cbxNom"
         Me.cbxNom.Size = New System.Drawing.Size(121, 21)
         Me.cbxNom.TabIndex = 0
@@ -40,7 +42,7 @@ Partial Class Accueil
         'lblDemandeNom
         '
         Me.lblDemandeNom.AutoSize = True
-        Me.lblDemandeNom.Location = New System.Drawing.Point(12, 9)
+        Me.lblDemandeNom.Location = New System.Drawing.Point(42, 84)
         Me.lblDemandeNom.Name = "lblDemandeNom"
         Me.lblDemandeNom.Size = New System.Drawing.Size(93, 13)
         Me.lblDemandeNom.TabIndex = 1
@@ -48,7 +50,7 @@ Partial Class Accueil
         '
         'btnJouer
         '
-        Me.btnJouer.Location = New System.Drawing.Point(85, 47)
+        Me.btnJouer.Location = New System.Drawing.Point(115, 122)
         Me.btnJouer.Name = "btnJouer"
         Me.btnJouer.Size = New System.Drawing.Size(75, 23)
         Me.btnJouer.TabIndex = 2
@@ -57,7 +59,7 @@ Partial Class Accueil
         '
         'btnScores
         '
-        Me.btnScores.Location = New System.Drawing.Point(85, 77)
+        Me.btnScores.Location = New System.Drawing.Point(115, 152)
         Me.btnScores.Name = "btnScores"
         Me.btnScores.Size = New System.Drawing.Size(75, 23)
         Me.btnScores.TabIndex = 3
@@ -66,25 +68,48 @@ Partial Class Accueil
         '
         'btnQuitter
         '
-        Me.btnQuitter.Location = New System.Drawing.Point(85, 107)
+        Me.btnQuitter.Location = New System.Drawing.Point(115, 182)
         Me.btnQuitter.Name = "btnQuitter"
         Me.btnQuitter.Size = New System.Drawing.Size(75, 23)
         Me.btnQuitter.TabIndex = 4
         Me.btnQuitter.Text = "Quitter"
         Me.btnQuitter.UseVisualStyleBackColor = True
         '
+        'lblTitre
+        '
+        Me.lblTitre.AutoSize = True
+        Me.lblTitre.Font = New System.Drawing.Font("Pristina", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitre.Location = New System.Drawing.Point(71, 9)
+        Me.lblTitre.Name = "lblTitre"
+        Me.lblTitre.Size = New System.Drawing.Size(176, 52)
+        Me.lblTitre.TabIndex = 5
+        Me.lblTitre.Text = "4 Memory"
+        '
+        'lblSousTitre
+        '
+        Me.lblSousTitre.AutoSize = True
+        Me.lblSousTitre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSousTitre.Location = New System.Drawing.Point(95, 48)
+        Me.lblSousTitre.Name = "lblSousTitre"
+        Me.lblSousTitre.Size = New System.Drawing.Size(110, 13)
+        Me.lblSousTitre.TabIndex = 6
+        Me.lblSousTitre.Text = "a concentration game"
+        '
         'Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(251, 157)
+        Me.ClientSize = New System.Drawing.Size(312, 228)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.lblSousTitre)
+        Me.Controls.Add(Me.lblTitre)
         Me.Controls.Add(Me.btnQuitter)
         Me.Controls.Add(Me.btnScores)
         Me.Controls.Add(Me.btnJouer)
         Me.Controls.Add(Me.lblDemandeNom)
         Me.Controls.Add(Me.cbxNom)
         Me.Name = "Accueil"
-        Me.Text = "Form1"
+        Me.Text = "Memory"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -95,4 +120,6 @@ Partial Class Accueil
     Friend WithEvents btnJouer As Button
     Friend WithEvents btnScores As Button
     Friend WithEvents btnQuitter As Button
+    Friend WithEvents lblTitre As Label
+    Friend WithEvents lblSousTitre As Label
 End Class
