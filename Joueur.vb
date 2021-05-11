@@ -1,10 +1,17 @@
 ﻿Public Class Joueur
-    Public nom As String
-    Public scoreMax As Int16
-    Public tempsMin As Int16
-    Public nbParties As Int16
-    Public tempsJeu As Int16
+    Private nom As String
+    Private scoreMax As Int16
+    Private tempsMin As Int16
+    Private nbParties As Int16
+    Private tempsJeu As Int16
 
+    Public Function GetNom()
+        Return Me.nom
+    End Function
+
+    Public Sub AjouterPartie()
+        Me.nbParties += 1
+    End Sub
     Public Sub New(nouvNom As String)
         nom = nouvNom
         scoreMax = 0
