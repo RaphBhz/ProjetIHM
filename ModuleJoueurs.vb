@@ -1,20 +1,37 @@
 ﻿Module ModuleJoueurs
-    Private joueurs As List(Of Joueur)
-
-    Public Sub PremiereEntree(nom As String)
-        joueurs = New List(Of Joueur)
-        joueurs.Add(New Joueur(nom))
-    End Sub
+    Private joueurs As String()
+    Private nomFile = "noms.txt"
     Public Sub NouvelleEntree(nom As String)
-        Dim joueurEntre = joueurs.Find(Function(j) j.getNom = nom)
+        Dim sFile = My.Computer.FileSystem.ReadAllText(nomFile)
+        joueurs = Split(sFile, "|")
+        Dim joueurEntre = Array.Find(joueurs, Function(s) s = nom)
         If joueurEntre IsNot Nothing Then
-            joueurEntre.ajouterPartie()
+            'Ajouter une partie à son compteur
         Else
-            joueurEntre = New Joueur(nom)
-            joueurs.Add(joueurEntre)
+            My.Computer.FileSystem.WriteAllText(nomFile, nom & "|", True)
         End If
     End Sub
-    Public Function JoueursVide()
-        Return joueurs Is Nothing
-    End Function
 End Module
+
+'Public Class Joueur
+'    Private nom As String
+'    Private scoreMax As Int16
+'   Private tempsMin As Int16
+'   Private nbParties As Int16
+'  Private tempsJeu As Int16
+
+'Public Function GetNom()
+'    Return Me.nom
+'  End Function
+
+'  Public Sub AjouterPartie()
+'       Me.nbParties += 1
+'    End Sub
+'   Public Sub New(nouvNom As String)
+'    nom = nouvNom
+'   scoreMax = 0
+'  nbParties = 1
+'    tempsJeu = 0
+'     tempsMin = Nothing
+'    End Sub
+'End Class"

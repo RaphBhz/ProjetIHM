@@ -73,7 +73,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Joueur.vb" />
     <Compile Include="Memory.Designer.vb">
       <DependentUpon>Memory.vb</DependentUpon>
     </Compile>

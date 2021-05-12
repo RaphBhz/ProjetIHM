@@ -10,12 +10,7 @@
             MsgBox("Entrez un nom d'une longueur minimum de 3 caractères.", vbOKOnly, "Erreur")
         Else
             Me.Hide()
-            If ModuleJoueurs.JoueursVide() Then
-                ModuleJoueurs.PremiereEntree(cbxNom.Text)
-            Else
-                ModuleJoueurs.NouvelleEntree(cbxNom.Text)
-            End If
-            cbxNom.Items.Add(cbxNom.Text)
+            ModuleJoueurs.NouvelleEntree(cbxNom.Text)
             Dim NouvMemory As Memory
             NouvMemory = New Memory
             NouvMemory.Show()

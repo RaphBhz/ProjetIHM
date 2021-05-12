@@ -25,8 +25,8 @@
 
         If Timer.Enabled = False Then
             Timer.Enabled = True
-            Timer.Start()
             ticks = 0
+            Timer.Start()
         End If
     End Sub
 
