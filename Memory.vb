@@ -15,7 +15,9 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
         ticks += 1
-        lblTimer.Text = Math.Round((timeMax - ticks) / 60) - 1 & " : " & Math.Round((timeMax - ticks) Mod 60)
+        Dim minutes = Format$(Math.Round((timeMax - ticks) / 60) - 1, "00")
+        Dim secondes = Format$(Math.Round((timeMax - ticks) Mod 60), "00")
+        lblTimer.Text = minutes & " : " & secondes
     End Sub
 
     Private Sub carte11_Click(sender As Object, e As EventArgs) Handles carte11.Click, carte12.Click, carte13.Click, carte14.Click, carte15.Click,
