@@ -11,6 +11,9 @@
             My.Computer.FileSystem.WriteAllText(nomFile, nom & "|", True)
         End If
     End Sub
+    Public Function getNomFile()
+        Return nomFile
+    End Function
 End Module
 
 'Public Class Joueur
