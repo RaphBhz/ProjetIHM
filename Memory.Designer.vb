@@ -112,7 +112,7 @@ Partial Class Memory
         '
         'carte11
         '
-        Me.carte11.Image = CType(resources.GetObject("carte11.Image"), System.Drawing.Image)
+        Me.carte11.Image = Global.ProjetIHM.My.Resources.Resources.BackCard
         Me.carte11.Location = New System.Drawing.Point(6, 19)
         Me.carte11.Name = "carte11"
         Me.carte11.Size = New System.Drawing.Size(89, 124)

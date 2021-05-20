@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carte.vb" />
     <Compile Include="Memory.Designer.vb">
       <DependentUpon>Memory.vb</DependentUpon>
     </Compile>
@@ -129,6 +130,24 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Card0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Card1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Card2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Card3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Card4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BackCard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
