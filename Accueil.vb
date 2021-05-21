@@ -33,4 +33,12 @@
     Private Sub Accueil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         saveJoueurs()
     End Sub
+
+    Private Sub btnScores_Click(sender As Object, e As EventArgs) Handles btnScores.Click
+        Me.Hide()
+        Dim newScoresForm As Scores
+        newScoresForm = New Scores
+        newScoresForm.Show()
+        newScoresForm = Nothing
+    End Sub
 End Class

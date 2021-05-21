@@ -23,12 +23,24 @@
         Dim tmpStr = Split(strJoueurs, "/")
         nom = tmpStr(0)
         scoreMax = Convert.ToInt16(tmpStr(1))
-        nbParties = Convert.ToInt16(tmpStr(2))
-        tempsJeu = Convert.ToInt16(tmpStr(3))
-        tempsMin = Convert.ToInt16(tmpStr(4))
+        tempsMin = Convert.ToInt16(tmpStr(2))
+        nbParties = Convert.ToInt16(tmpStr(3))
+        tempsJeu = Convert.ToInt16(tmpStr(4))
     End Sub
 
     Public Overrides Function ToString() As String
         Return Me.nom & "/" & Me.scoreMax & "/" & Me.tempsMin & "/" & Me.nbParties & "/" & Me.tempsJeu & "|"
+    End Function
+
+    Public Function getScore()
+        Return scoreMax
+    End Function
+    Public Function getTime()
+        Return tempsMin
+    End Function
+
+    Public Function afficheScore() As String
+        Dim strTime = Math.Round(Me.getTime / 60) & " minutes et " & Me.getTime Mod 60 & " secondes."
+        Return Me.GetNom & " : " & vbCrLf & "Meilleur score : " & Me.getScore & " en " & strTime & vbCrLf & Me.nbParties & " parties jouées pour un total de " & tempsJeu
     End Function
 End Class

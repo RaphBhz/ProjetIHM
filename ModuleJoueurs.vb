@@ -43,4 +43,8 @@
         Next
         My.Computer.FileSystem.WriteAllText(nomFile, strFile, False)
     End Sub
+
+    Public Function getAllJoueurs()
+        Return joueurs
+    End Function
 End Module
