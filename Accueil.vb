@@ -20,13 +20,17 @@
     End Sub
 
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        initJoueurs()
         cbxNom.Items.Clear()
-        Dim sFile = My.Computer.FileSystem.ReadAllText(ModuleJoueurs.getNomFile)
-        Dim joueurs = Split(sFile, "|")
-        For Each nom As String In joueurs
+        Dim listeJoueurs = getNomsJoueurs()
+        For Each nom As String In listeJoueurs
             If nom <> "" Then
                 cbxNom.Items.Add(nom)
             End If
         Next
+    End Sub
+
+    Private Sub Accueil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        saveJoueurs()
     End Sub
 End Class
