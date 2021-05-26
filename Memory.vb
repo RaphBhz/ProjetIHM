@@ -3,7 +3,7 @@
     Private ticks As Integer
     Private cartes As New ArrayList
     Private cartesRetournees As New ArrayList
-    Private rdmCartesTab() As Integer = New Integer(4) {0, 0, 0, 0, 0}
+    Private rdmCartesTab(20) As Integer
     Private score As Integer = 0
     Private joueur As Joueur
 
@@ -20,26 +20,28 @@
     End Sub
 
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim i = 0
+        initRdmCartesTab()
+        shuffleCartes()
         lblNomJoueur.Text = Accueil.cbxNom.Text
         Timer.Interval = 1000
         Dim carteValue As Integer = 0
 
         For Each carte As PictureBox In gbxCartes.Controls
-            carteValue = getRandomImg()
+            carteValue = rdmCartesTab(i)
             cartes.Add(New Carte(My.Resources.ResourceManager.GetObject("Card" & carteValue), carte, carteValue))
+            i += 1
         Next carte
 
     End Sub
 
-    Private Function getRandomImg() As Integer
-        Dim i As Integer = CInt(Int((5 * Rnd())))
-        While rdmCartesTab(i) > 3
-            i = CInt(Int((5 * Rnd())))
-        End While
-        rdmCartesTab(i) += 1
+    Private Sub shuffleCartes()
+        Dim r As Random = New Random()
+        rdmCartesTab = rdmCartesTab.OrderBy(Function(a) r.Next()).ToArray
+    End Sub
 
-        Return i
-
+    Private Function getRandomImg(i As Int16) As Integer
+        Return rdmCartesTab(i)
     End Function
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
@@ -159,5 +161,9 @@
         Next
     End Sub
 
-
+    Private Sub initRdmCartesTab()
+        For i = 0 To rdmCartesTab.Length - 1
+            rdmCartesTab(i) = i Mod 5
+        Next
+    End Sub
 End Class
