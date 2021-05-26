@@ -38,3 +38,4 @@ C:\Users\User\Desktop\ProjetIHM\obj\Debug\ProjetIHM.exe
 C:\Users\User\Desktop\ProjetIHM\obj\Debug\ProjetIHM.xml
 C:\Users\User\Desktop\ProjetIHM\obj\Debug\ProjetIHM.pdb
 C:\Users\Raph\Documents\GitHub\ProjetIHM\obj\Debug\ProjetIHM.Scores.resources
+C:\Users\User\Desktop\ProjetIHM\obj\Debug\ProjetIHM.Scores.resources

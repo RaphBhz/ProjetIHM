@@ -9,6 +9,17 @@
             joueurs.Add(New Joueur(nom))
         End If
     End Sub
+
+    Public Function getJoueur(nom As String) As Joueur
+        For Each joueur As Joueur In joueurs
+            If joueur.GetNom = nom Then
+                Return joueur
+            End If
+        Next joueur
+        Return Nothing
+
+    End Function
+
     Public Function getNomFile()
         Return nomFile
     End Function

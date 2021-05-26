@@ -12,10 +12,9 @@
             Me.Hide()
             cbxNom.Items.Add(cbxNom.Text)
             ModuleJoueurs.NouvelleEntree(cbxNom.Text)
-            Dim NouvMemory As Memory
-            NouvMemory = New Memory
+            Dim NouvMemory As Memory = New Memory()
             NouvMemory.Show()
-            NouvMemory = Nothing
+            NouvMemory.setJoueur(ModuleJoueurs.getJoueur(cbxNom.Text))
         End If
     End Sub
 
@@ -41,4 +40,5 @@
         newScoresForm.Show()
         newScoresForm = Nothing
     End Sub
+
 End Class

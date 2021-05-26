@@ -1,10 +1,15 @@
 ﻿Public Class Memory
-    Dim timeMax = 600
-    Dim ticks As Integer
-    Dim ticksWait As Integer = 0
-    Dim cartes As New ArrayList
-    Dim cartesRetournees As New ArrayList
-    Dim rdmCartesTab() As Integer = New Integer(4) {0, 0, 0, 0, 0}
+    Const MAX_TIME As Integer = 60
+    Private ticks As Integer
+    Private cartes As New ArrayList
+    Private cartesRetournees As New ArrayList
+    Private rdmCartesTab() As Integer = New Integer(4) {0, 0, 0, 0, 0}
+    Private score As Integer = 0
+    Private joueur As Joueur
+
+    Public Sub setJoueur(joueur As Joueur)
+        Me.joueur = joueur
+    End Sub
 
 
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
@@ -39,10 +44,39 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
         ticks += 1
-        Dim minutes = Format$(Math.Round((timeMax - ticks) / 60) - 1, "00")
-        Dim secondes = Format$(Math.Round((timeMax - ticks) Mod 60), "00")
+        Dim minutes = Format$(Math.Round((MAX_TIME - ticks) / 60) - 1, "00")
+        Dim secondes = Format$(Math.Round((MAX_TIME - ticks) Mod 60), "00")
         lblTimer.Text = minutes & " : " & secondes
+
+        If isGameFinished() Then
+            stopGame()
+        End If
     End Sub
+
+    Private Sub stopGame()
+        Timer.Stop()
+        For Each carte As Carte In cartes
+            carte.desactiverCarte()
+        Next carte
+        MsgBox("La partie est finie")
+        If joueur.isScoreBetter(score, ticks) Then
+            joueur.setBestScore(score, ticks)
+            ModuleJoueurs.saveJoueurs()
+        End If
+    End Sub
+
+    Private Function isGameFinished() As Boolean
+        If ticks = 60 Then
+            Return True
+        End If
+
+        If score = 5 Then
+            Return True
+        End If
+
+        Return False
+    End Function
+
 
     Private Sub carte11_Click(sender As PictureBox, e As EventArgs) Handles carte11.Click, carte12.Click, carte13.Click, carte14.Click, carte15.Click,
             carte21.Click, carte22.Click, carte23.Click, carte24.Click, carte25.Click,
@@ -74,6 +108,7 @@
             resetAllCartes()
         ElseIf areCartesCarre() Then
             lockAllCartesRetournees()
+            score += 1
         End If
 
     End Sub
@@ -123,5 +158,6 @@
             System.Threading.Thread.Sleep(1000)
         Next
     End Sub
+
 
 End Class

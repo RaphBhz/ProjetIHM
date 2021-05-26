@@ -1,9 +1,9 @@
 ﻿Public Class Joueur
     Private nom As String
-    Private scoreMax As Int16
-    Private tempsMin As Int16
-    Private nbParties As Int16
-    Private tempsJeu As Int16
+    Private scoreMax As Integer
+    Private tempsMin As Integer
+    Private nbParties As Integer
+    Private tempsJeu As Integer
 
     Public Function GetNom()
         Return Me.nom
@@ -19,6 +19,25 @@
         tempsJeu = 0
         tempsMin = 0
     End Sub
+
+    Public Sub setBestScore(score As Integer, time As Integer)
+        Me.scoreMax = score
+        Me.tempsMin = time
+    End Sub
+
+    Public Function isScoreBetter(score As Integer, time As Integer) As Boolean
+        If score < scoreMax Then
+            Return False
+        End If
+
+        If score = scoreMax And time > tempsMin Then
+            Return False
+        End If
+
+        Return True
+
+    End Function
+
     Public Sub New(strJoueurs As String, b As Boolean)
         Dim tmpStr = Split(strJoueurs, "/")
         nom = tmpStr(0)
