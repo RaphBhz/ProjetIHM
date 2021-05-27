@@ -29,6 +29,7 @@ Partial Class Accueil
         Me.btnQuitter = New System.Windows.Forms.Button()
         Me.lblTitre = New System.Windows.Forms.Label()
         Me.lblSousTitre = New System.Windows.Forms.Label()
+        Me.btn_options = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'cbxNom
@@ -68,7 +69,7 @@ Partial Class Accueil
         '
         'btnQuitter
         '
-        Me.btnQuitter.Location = New System.Drawing.Point(82, 182)
+        Me.btnQuitter.Location = New System.Drawing.Point(82, 210)
         Me.btnQuitter.Name = "btnQuitter"
         Me.btnQuitter.Size = New System.Drawing.Size(75, 23)
         Me.btnQuitter.TabIndex = 4
@@ -95,12 +96,22 @@ Partial Class Accueil
         Me.lblSousTitre.TabIndex = 6
         Me.lblSousTitre.Text = "a concentration game"
         '
+        'btn_options
+        '
+        Me.btn_options.Location = New System.Drawing.Point(82, 181)
+        Me.btn_options.Name = "btn_options"
+        Me.btn_options.Size = New System.Drawing.Size(75, 23)
+        Me.btn_options.TabIndex = 7
+        Me.btn_options.Text = "Options"
+        Me.btn_options.UseVisualStyleBackColor = True
+        '
         'Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(248, 223)
+        Me.ClientSize = New System.Drawing.Size(248, 260)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btn_options)
         Me.Controls.Add(Me.lblSousTitre)
         Me.Controls.Add(Me.lblTitre)
         Me.Controls.Add(Me.btnQuitter)
@@ -122,4 +133,5 @@ Partial Class Accueil
     Friend WithEvents btnQuitter As Button
     Friend WithEvents lblTitre As Label
     Friend WithEvents lblSousTitre As Label
+    Friend WithEvents btn_options As Button
 End Class

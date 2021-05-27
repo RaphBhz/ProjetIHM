@@ -1,23 +1,28 @@
 ﻿Public Class Memory
-    Private MAX_TIME As Integer = 60
+    Private MAX_TIME As Integer
     Private ticks As Integer
     Private cartes As New ArrayList
     Private cartesRetournees As New ArrayList
     Private rdmCartesTab(19) As Integer
     Private score As Integer = 0
     Private joueur As Joueur
+    Private timerModified As Boolean
+    Private optionsValues As List(Of String)
+    Private timerOn As Boolean
 
     Public Sub setJoueur(joueur As Joueur)
         Me.joueur = joueur
     End Sub
 
-    Public Function getTimeMax()
-        Return MAX_TIME
-    End Function
+    Private Sub applyOptions()
+        If optionsValues(0) = 0 Then
+            timerOn = False
+        Else
+            timerOn = True
+        End If
+        MAX_TIME = optionsValues(1) * 60 + optionsValues(2)
+    End Sub
 
-    Public Function setTimeMax(min As Int16, sec As Int16)
-        MAX_TIME = min * 60 + sec
-    End Function
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
         If MsgBox("Abandonner la partie en cours ?", vbYesNo, "Abandon") = vbYes Then
             joueur.addTime(ticks)
@@ -30,9 +35,15 @@
         Dim i = 0
         initRdmCartesTab()
         shuffleCartes()
+        optionsValues = Options.loadOptions()
+        applyOptions()
         lblNomJoueur.Text = Accueil.cbxNom.Text
         Timer.Interval = 1000
         Dim carteValue As Integer = 0
+
+        If Not timerOn Then
+            lblTimer.Text = "Désactivé"
+        End If
 
         For Each carte As PictureBox In gbxCartes.Controls
             carteValue = rdmCartesTab(i)
@@ -53,9 +64,11 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
         ticks += 1
-        Dim minutes = Format$(Int((MAX_TIME - ticks) / 60), "00")
-        Dim secondes = Format$(Int((MAX_TIME - ticks) Mod 60), "00")
-        lblTimer.Text = minutes & " : " & secondes
+        If timerOn Then
+            Dim minutes = Format$(Int((MAX_TIME - ticks) / 60), "00")
+            Dim secondes = Format$(Int((MAX_TIME - ticks) Mod 60), "00")
+            lblTimer.Text = minutes & " : " & secondes
+        End If
 
         If isGameFinished() Then
             joueur.addTime(ticks)
@@ -78,7 +91,7 @@
     End Sub
 
     Private Function isGameFinished() As Boolean
-        If ticks = MAX_TIME Then
+        If ticks = MAX_TIME And timerOn Then
             Return True
         End If
 

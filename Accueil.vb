@@ -41,4 +41,8 @@
         newScoresForm = Nothing
     End Sub
 
+    Private Sub btn_options_Click(sender As Object, e As EventArgs) Handles btn_options.Click
+        Dim NouvOptions As Options = New Options()
+        NouvOptions.Show()
+    End Sub
 End Class
