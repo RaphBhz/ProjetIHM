@@ -9,7 +9,9 @@
         Me.retournee = False
         Me.carte = carte
         Me.imageValue = imgValue
+
     End Sub
+
 
     Public Sub desactiverCarte()
         carte.Enabled = False

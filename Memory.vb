@@ -10,6 +10,7 @@
     Private timerModified As Boolean
     Private optionsValues As Integer()
     Private timerOn As Boolean
+    Private gameStopped As Integer = -1
 
     Public Sub setJoueur(joueur As Joueur)
         Me.joueur = joueur
@@ -113,11 +114,18 @@
             carte31.Click, carte32.Click, carte33.Click, carte34.Click, carte35.Click,
             carte41.Click, carte42.Click, carte43.Click, carte44.Click, carte45.Click
 
+        If gameStopped = 1 Then
+            Return
+        End If
+
         If Timer.Enabled = False Then
+            gameStopped = 0
             Timer.Enabled = True
             ticks = 0
             Timer.Start()
         End If
+
+
 
         Dim carte As Carte = getCarte(sender)
 
@@ -130,8 +138,6 @@
 
         If cartesRetournees.Contains(carte) = False Then
             cartesRetournees.Add(carte)
-        Else
-            cartesRetournees.Remove(carte)
         End If
 
         If cartesRetournees.Count = 0 Then
@@ -200,5 +206,21 @@
         For i = 0 To rdmCartesTab.Length - 1
             rdmCartesTab(i) = i Mod 5
         Next
+    End Sub
+
+    Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
+        If gameStopped = -1 Then
+            MsgBox("Impossible de mettre une partie en pause si elle n'est pas commencée ou finie", vbOKOnly, "Pause")
+            Return
+        End If
+
+        If gameStopped = 0 Then
+            Timer.Stop()
+            gameStopped = 1
+        Else
+            Timer.Start()
+            gameStopped = 0
+        End If
+
     End Sub
 End Class
