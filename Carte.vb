@@ -13,6 +13,7 @@
 
     Public Sub desactiverCarte()
         carte.Enabled = False
+        colorPicToGrey()
     End Sub
 
     Public Function getImgValue()
@@ -40,13 +41,21 @@
         carte.Image = image
         retournee = True
 
-        'If Not retournee Then
-        'carte.Image = image
-        'retournee = True
-        'Else
-        'carte.Image = My.Resources.ResourceManager.GetObject("BackCard")
-        'retournee = False
-        'End If
+    End Sub
+
+    Private Sub colorPicToGrey()
+        Dim pic As Bitmap = New Bitmap(carte.Image)
+        Dim gray = New Bitmap(pic.Width, pic.Height)
+
+        For x As Integer = 0 To (pic.Width) - 1
+            For y As Integer = 0 To (pic.Height) - 1
+                Dim c As Color = pic.GetPixel(x, y)
+                Dim d As Integer = (CInt(c.R) + CInt(c.G) + CInt(c.B)) \ 3
+                gray.SetPixel(x, y, Color.FromArgb(d, d, d))
+            Next
+        Next
+
+        carte.Image = gray
     End Sub
 
     Public Function getEtatRetournee()
