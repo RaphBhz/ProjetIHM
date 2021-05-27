@@ -2,17 +2,15 @@
     Private fileOptions = "options.txt"
     Private timerOn = True
     Private options As String
-    Private optionsValues As List(Of String)
+    Private optionsValues As Int16()
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         optionsValues = loadOptions()
         applyOptions()
-
-
     End Sub
 
     Private Sub applyOptions()
-        txt_TimerMin.Text = Str(Int(optionsValues(1) / 60))
-        txt_TimerSec.Text = Str(Int(optionsValues(2) Mod 60))
+        txt_TimerMin.Text = optionsValues(1)
+        txt_TimerSec.Text = optionsValues(2)
         If optionsValues(0) = 0 Then
             timerOn = False
             txt_TimerSec.Enabled = False
@@ -25,8 +23,15 @@
     End Sub
 
     Public Function loadOptions()
+        Dim tmpStr As String()
+        Dim rtTable As List(Of Int16)
+        rtTable = New List(Of Int16)
         options = My.Computer.FileSystem.ReadAllText(fileOptions)
-        Return Split(options, "|").ToList
+        tmpStr = Split(options, "|")
+        For i = 0 To tmpStr.Length - 1
+            rtTable.Add(Convert.ToInt16(tmpStr(i)))
+        Next
+        Return rtTable.ToArray
     End Function
 
     Private Sub btn_desactiver_Click(sender As Object, e As EventArgs) Handles btn_desactiver.Click
@@ -55,8 +60,8 @@
         optionsValues(1) = txt_TimerMin.Text
         optionsValues(2) = txt_TimerSec.Text
         strFile = optionsValues(0)
-        For i = 1 To optionsValues.Count - 1
-            strFile = strFile & "|" & optionsValues(i)
+        For i = 1 To optionsValues.Length - 1
+            strFile = strFile & "|" & Str(optionsValues(i))
         Next
         My.Computer.FileSystem.WriteAllText(fileOptions, strFile, False)
     End Sub

@@ -7,7 +7,7 @@
     Private score As Integer = 0
     Private joueur As Joueur
     Private timerModified As Boolean
-    Private optionsValues As List(Of String)
+    Private optionsValues As Int16()
     Private timerOn As Boolean
 
     Public Sub setJoueur(joueur As Joueur)
@@ -40,6 +40,10 @@
         lblNomJoueur.Text = Accueil.cbxNom.Text
         Timer.Interval = 1000
         Dim carteValue As Integer = 0
+
+        Dim minutes = Format$(Int((MAX_TIME) / 60), "00")
+        Dim secondes = Format$(Int((MAX_TIME) Mod 60), "00")
+        lblTimer.Text = minutes & " : " & secondes
 
         If Not timerOn Then
             lblTimer.Text = "Désactivé"

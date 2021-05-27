@@ -327,9 +327,9 @@ Partial Class Memory
         Me.lblTimer.AutoSize = True
         Me.lblTimer.Location = New System.Drawing.Point(266, 13)
         Me.lblTimer.Name = "lblTimer"
-        Me.lblTimer.Size = New System.Drawing.Size(40, 13)
+        Me.lblTimer.Size = New System.Drawing.Size(28, 13)
         Me.lblTimer.TabIndex = 25
-        Me.lblTimer.Text = "01 : 00"
+        Me.lblTimer.Text = "-- : --"
         '
         'Memory
         '
