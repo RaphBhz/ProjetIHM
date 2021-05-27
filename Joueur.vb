@@ -41,10 +41,10 @@
     Public Sub New(strJoueurs As String, b As Boolean)
         Dim tmpStr = Split(strJoueurs, "/")
         nom = tmpStr(0)
-        scoreMax = Convert.ToInt16(tmpStr(1))
-        tempsMin = Convert.ToInt16(tmpStr(2))
-        nbParties = Convert.ToInt16(tmpStr(3))
-        tempsJeu = Convert.ToInt16(tmpStr(4))
+        scoreMax = CInt(tmpStr(1))
+        tempsMin = CInt(tmpStr(2))
+        nbParties = CInt(tmpStr(3))
+        tempsJeu = CInt(tmpStr(4))
     End Sub
 
     Public Overrides Function ToString() As String

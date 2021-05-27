@@ -5,9 +5,10 @@
     Private cartesRetournees As New ArrayList
     Private rdmCartesTab(19) As Integer
     Private score As Integer = 0
+    Private timeScore As Integer = 0
     Private joueur As Joueur
     Private timerModified As Boolean
-    Private optionsValues As Int16()
+    Private optionsValues As Integer()
     Private timerOn As Boolean
 
     Public Sub setJoueur(joueur As Joueur)
@@ -62,7 +63,7 @@
         rdmCartesTab = rdmCartesTab.OrderBy(Function(a) r.Next()).ToArray
     End Sub
 
-    Private Function getRandomImg(i As Int16) As Integer
+    Private Function getRandomImg(i As Integer) As Integer
         Return rdmCartesTab(i)
     End Function
 
@@ -86,8 +87,8 @@
             carte.desactiverCarte()
         Next carte
         MsgBox("La partie est finie")
-        If joueur.isScoreBetter(score, ticks) Then
-            joueur.setBestScore(score, ticks)
+        If joueur.isScoreBetter(score, timeScore) Then
+            joueur.setBestScore(score, timeScore)
             ModuleJoueurs.saveJoueurs()
         End If
         Me.Close()
@@ -119,7 +120,13 @@
         End If
 
         Dim carte As Carte = getCarte(sender)
+
+        If carte.getEtatRetournee Then
+            Return
+        End If
+
         carte.retournerCarte()
+
 
         If cartesRetournees.Contains(carte) = False Then
             cartesRetournees.Add(carte)
@@ -138,6 +145,7 @@
         ElseIf areCartesCarre() Then
             lockAllCartesRetournees()
             score += 1
+            timeScore = ticks
         End If
 
     End Sub
@@ -166,7 +174,7 @@
     Private Sub resetAllCartes()
 
         For Each carte As Carte In cartesRetournees
-            carte.retournerCarte()
+            carte.setFaceBackCarte()
         Next carte
         cartesRetournees.Clear()
 

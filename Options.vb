@@ -2,7 +2,7 @@
     Private fileOptions = "options.txt"
     Private timerOn = True
     Private options As String
-    Private optionsValues As Int16()
+    Private optionsValues As Integer()
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         optionsValues = loadOptions()
         applyOptions()
@@ -24,12 +24,12 @@
 
     Public Function loadOptions()
         Dim tmpStr As String()
-        Dim rtTable As List(Of Int16)
-        rtTable = New List(Of Int16)
+        Dim rtTable As List(Of Integer)
+        rtTable = New List(Of Integer)
         options = My.Computer.FileSystem.ReadAllText(fileOptions)
         tmpStr = Split(options, "|")
         For i = 0 To tmpStr.Length - 1
-            rtTable.Add(Convert.ToInt16(tmpStr(i)))
+            rtTable.Add(CInt(tmpStr(i)))
         Next
         Return rtTable.ToArray
     End Function
