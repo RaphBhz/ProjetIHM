@@ -1,9 +1,9 @@
 ﻿Public Class Memory
-    Const MAX_TIME As Integer = 60
+    Private MAX_TIME As Integer = 60
     Private ticks As Integer
     Private cartes As New ArrayList
     Private cartesRetournees As New ArrayList
-    Private rdmCartesTab(20) As Integer
+    Private rdmCartesTab(19) As Integer
     Private score As Integer = 0
     Private joueur As Joueur
 
@@ -11,9 +11,16 @@
         Me.joueur = joueur
     End Sub
 
+    Public Function getTimeMax()
+        Return MAX_TIME
+    End Function
 
+    Public Function setTimeMax(min As Int16, sec As Int16)
+        MAX_TIME = min * 60 + sec
+    End Function
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
         If MsgBox("Abandonner la partie en cours ?", vbYesNo, "Abandon") = vbYes Then
+            joueur.addTime(ticks)
             Me.Close()
             Accueil.Show()
         End If
@@ -46,11 +53,12 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
         ticks += 1
-        Dim minutes = Format$(Math.Round((MAX_TIME - ticks) / 60) - 1, "00")
-        Dim secondes = Format$(Math.Round((MAX_TIME - ticks) Mod 60), "00")
+        Dim minutes = Format$(Int((MAX_TIME - ticks) / 60), "00")
+        Dim secondes = Format$(Int((MAX_TIME - ticks) Mod 60), "00")
         lblTimer.Text = minutes & " : " & secondes
 
         If isGameFinished() Then
+            joueur.addTime(ticks)
             stopGame()
         End If
     End Sub
@@ -65,10 +73,12 @@
             joueur.setBestScore(score, ticks)
             ModuleJoueurs.saveJoueurs()
         End If
+        Me.Close()
+        Accueil.Show()
     End Sub
 
     Private Function isGameFinished() As Boolean
-        If ticks = 60 Then
+        If ticks = MAX_TIME Then
             Return True
         End If
 

@@ -58,8 +58,12 @@
         Return tempsMin
     End Function
 
+    Public Sub addTime(t As Int16)
+        Me.tempsJeu += t
+    End Sub
+
     Public Function afficheScore() As String
-        Dim strTime = Math.Round(Me.getTime / 60) & " minutes et " & Me.getTime Mod 60 & " secondes."
-        Return Me.GetNom & " : " & vbCrLf & "Meilleur score : " & Me.getScore & " en " & strTime & vbCrLf & Me.nbParties & " parties jouées pour un total de " & tempsJeu
+        Dim strTime = Format$(Int(Me.getTime / 60), "00") & " minutes et " & Format$(Int(Me.getTime Mod 60), "00") & " secondes."
+        Return Me.GetNom & " : " & vbCrLf & "Meilleur score : " & Me.getScore & "pts en " & strTime & vbCrLf & Me.nbParties & " parties jouées pour un total de " & Format$(Int(Me.tempsJeu / 60), "00") & " minutes et " & Format$(Int(Me.tempsJeu Mod 60), "00") & " secondes."
     End Function
 End Class
