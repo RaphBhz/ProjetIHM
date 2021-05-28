@@ -73,6 +73,16 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property BackSD() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("BackSD", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Card0() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Card0", resourceCulture)
@@ -116,6 +126,56 @@ Namespace My.Resources
         Friend ReadOnly Property Card4() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Card4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property SD0() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SD0", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property SD1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SD1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property SD2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SD2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property SD3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SD3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property SD4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SD4", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

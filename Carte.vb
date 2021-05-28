@@ -3,12 +3,14 @@
     Private imageValue As Integer
     Private retournee As Boolean
     Private carte As PictureBox
+    Private imageName As String
 
-    Public Sub New(image As Image, carte As PictureBox, imgValue As Integer)
+    Public Sub New(image As Image, carte As PictureBox, imgValue As Integer, imageName As String)
         Me.image = image
         Me.retournee = False
         Me.carte = carte
         Me.imageValue = imgValue
+        Me.imageName = imageName
 
     End Sub
 
@@ -30,7 +32,7 @@
         If Not carte.Enabled Then
             Return
         End If
-        carte.Image = My.Resources.ResourceManager.GetObject("BackCard")
+        carte.Image = My.Resources.ResourceManager.GetObject("Back" & imageName)
         retournee = False
 
     End Sub

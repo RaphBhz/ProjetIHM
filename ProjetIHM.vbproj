@@ -168,5 +168,23 @@
   <ItemGroup>
     <None Include="Images\BackCard.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BackSD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SD0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SD1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SD2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SD3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SD4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

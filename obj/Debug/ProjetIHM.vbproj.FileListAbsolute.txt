@@ -55,3 +55,4 @@ C:\Users\Flori\Desktop\ProjetIHM\obj\Debug\ProjetIHM.vbproj.CoreCompileInputs.ca
 C:\Users\Flori\Desktop\ProjetIHM\obj\Debug\ProjetIHM.exe
 C:\Users\Flori\Desktop\ProjetIHM\obj\Debug\ProjetIHM.xml
 C:\Users\Flori\Desktop\ProjetIHM\obj\Debug\ProjetIHM.pdb
+C:\Users\User\Desktop\ProjetIHM\obj\Debug\ProjetIHM.Options.resources

@@ -3,6 +3,9 @@
     Private timerOn = True
     Private options As String
     Private optionsValues As Integer()
+    Private imageIndex As Integer = 0
+    Private nomImage As String = "Card"
+
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         optionsValues = loadOptions()
         applyOptions()
@@ -22,13 +25,22 @@
         End If
     End Sub
 
+    Public Function getImageOption() As String
+        Dim tmpStr As String()
+        Dim image As String
+        options = My.Computer.FileSystem.ReadAllText(fileOptions)
+        tmpStr = Split(options, "|")
+        image = tmpStr(3)
+        Return image
+    End Function
+
     Public Function loadOptions()
         Dim tmpStr As String()
         Dim rtTable As List(Of Integer)
         rtTable = New List(Of Integer)
         options = My.Computer.FileSystem.ReadAllText(fileOptions)
         tmpStr = Split(options, "|")
-        For i = 0 To tmpStr.Length - 1
+        For i = 0 To tmpStr.Length - 2
             rtTable.Add(CInt(tmpStr(i)))
         Next
         Return rtTable.ToArray
@@ -65,7 +77,28 @@
             For i = 1 To optionsValues.Length - 1
                 strFile = strFile & "|" & Str(optionsValues(i))
             Next
+            strFile = strFile & "|" & nomImage
+
             My.Computer.FileSystem.WriteAllText(fileOptions, strFile, False)
         End If
     End Sub
+
+    Private Sub changeThemeButton_Click(sender As Object, e As EventArgs) Handles changeThemeButton.Click
+        imageIndex += 1
+        If imageIndex Mod 2 = 0 Then
+            nomImage = "Card"
+        ElseIf imageIndex Mod 2 = 1 Then
+            nomImage = "SD"
+        End If
+
+        PictureBox1.Image = My.Resources.ResourceManager.GetObject("Back" & nomImage)
+        PictureBox2.Image = My.Resources.ResourceManager.GetObject(nomImage & "0")
+        PictureBox3.Image = My.Resources.ResourceManager.GetObject(nomImage & "1")
+        PictureBox4.Image = My.Resources.ResourceManager.GetObject(nomImage & "2")
+        PictureBox5.Image = My.Resources.ResourceManager.GetObject(nomImage & "3")
+        PictureBox6.Image = My.Resources.ResourceManager.GetObject(nomImage & "4")
+
+
+    End Sub
+
 End Class

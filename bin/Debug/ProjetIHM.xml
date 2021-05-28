@@ -27,6 +27,11 @@ ProjetIHM
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:ProjetIHM.My.Resources.Resources.BackSD">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:ProjetIHM.My.Resources.Resources.Card0">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
@@ -48,6 +53,31 @@ ProjetIHM
 </summary>
 </member>
 <member name="P:ProjetIHM.My.Resources.Resources.Card4">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjetIHM.My.Resources.Resources.SD0">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjetIHM.My.Resources.Resources.SD1">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjetIHM.My.Resources.Resources.SD2">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjetIHM.My.Resources.Resources.SD3">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjetIHM.My.Resources.Resources.SD4">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>

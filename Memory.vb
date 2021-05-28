@@ -35,6 +35,7 @@
 
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim i = 0
+        Dim imageName As String = Options.getImageOption()
         initRdmCartesTab()
         shuffleCartes()
         optionsValues = Options.loadOptions()
@@ -52,8 +53,9 @@
         End If
 
         For Each carte As PictureBox In gbxCartes.Controls
+            carte.Image = My.Resources.ResourceManager.GetObject("Back" & imageName)
             carteValue = rdmCartesTab(i)
-            cartes.Add(New Carte(My.Resources.ResourceManager.GetObject("Card" & carteValue), carte, carteValue))
+            cartes.Add(New Carte(My.Resources.ResourceManager.GetObject(imageName & carteValue), carte, carteValue, imageName))
             i += 1
         Next carte
 
@@ -84,7 +86,7 @@
 
     Private Sub stopGame()
         Timer.Stop()
-        MsgBox(timeScore)
+        'MsgBox(timeScore)
         For Each carte As Carte In cartes
             carte.desactiverCarte()
         Next carte
