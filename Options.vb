@@ -8,6 +8,8 @@
 
     'Procédure gérant l'évènement Load du formulaire
     'Récupère les options dans un fichier et les applique
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         optionsValues = loadOptions()
         applyOptions()
@@ -29,6 +31,7 @@
     End Sub
 
     'Fonction permettant de récupérer le préfixe des images à afficher
+    '@return Le préfixe de l'image
     Public Function getImageOption() As String
         Dim tmpStr As String()
         Dim image As String
@@ -52,6 +55,8 @@
     End Function
 
     'Procédure gérant l'évènement click du bouton pour désactiver ou non le timer du jeu
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub btn_desactiver_Click(sender As Object, e As EventArgs) Handles btn_desactiver.Click
         If timerOn Then
             btn_desactiver.Text = "Activer"
@@ -69,10 +74,16 @@
     End Sub
 
     'Procédure gérant l'évènement click du bouton pour quitter le formulaire (bouton "retour")
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub btn_quitter_Click(sender As Object, e As EventArgs) Handles btn_quitter.Click
         Me.Close()
         Accueil.Show()
     End Sub
+
+    'Procédure gérant l'évènement click du bouton pour appliquer les options (bouton "appliquer")
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub btn_AppliquerOptions_Click(sender As Object, e As EventArgs) Handles btn_AppliquerOptions.Click
         Dim strFile As String
         If CInt(txt_TimerSec.Text) > 59 Then
@@ -90,6 +101,9 @@
         End If
     End Sub
 
+    'Procédure gérant l'évènement click du bouton pour changer le thème (bouton "changer le thème")
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub changeThemeButton_Click(sender As Object, e As EventArgs) Handles changeThemeButton.Click
         imageIndex += 1
         If imageIndex Mod 2 = 0 Then
