@@ -84,6 +84,7 @@
 
     Private Sub stopGame()
         Timer.Stop()
+        MsgBox(timeScore)
         For Each carte As Carte In cartes
             carte.desactiverCarte()
         Next carte

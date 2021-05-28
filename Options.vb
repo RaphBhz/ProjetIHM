@@ -54,15 +54,18 @@
         Me.Close()
         Accueil.Show()
     End Sub
-
     Private Sub btn_AppliquerOptions_Click(sender As Object, e As EventArgs) Handles btn_AppliquerOptions.Click
         Dim strFile As String
-        optionsValues(1) = txt_TimerMin.Text
-        optionsValues(2) = txt_TimerSec.Text
-        strFile = optionsValues(0)
-        For i = 1 To optionsValues.Length - 1
-            strFile = strFile & "|" & Str(optionsValues(i))
-        Next
-        My.Computer.FileSystem.WriteAllText(fileOptions, strFile, False)
+        If CInt(txt_TimerSec.Text) > 59 Then
+            MsgBox("Montnant de secondes invalide", vbOKOnly, "Erreur")
+        Else
+            optionsValues(1) = txt_TimerMin.Text
+            optionsValues(2) = txt_TimerSec.Text
+            strFile = optionsValues(0)
+            For i = 1 To optionsValues.Length - 1
+                strFile = strFile & "|" & Str(optionsValues(i))
+            Next
+            My.Computer.FileSystem.WriteAllText(fileOptions, strFile, False)
+        End If
     End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class Scores
     Private Const CROISSANT = 1
     Private Const DECROISSANT = -1
-    Private ordre As Int16
+    Private ordre As Integer
     Private dataJoueurs As List(Of Joueur)
 
     Private Sub Scores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -72,7 +72,7 @@
     Private Sub initialiserLbxJoueurs()
         lbxScores.Items.Clear()
         For i = 0 To dataJoueurs.Count - 1
-            Dim strTime = Math.Round(dataJoueurs(i).getTime / 60) & "m" & dataJoueurs(i).getTime Mod 60 & "s"
+            Dim strTime = Int(dataJoueurs(i).getTime / 60) & "m" & dataJoueurs(i).getTime Mod 60 & "s"
             lbxScores.Items.Add(dataJoueurs(i).GetNom & " : " & dataJoueurs(i).getScore & "pts en " & strTime)
         Next
     End Sub
