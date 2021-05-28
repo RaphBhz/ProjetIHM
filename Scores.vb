@@ -4,6 +4,7 @@
     Private ordre As Integer
     Private dataJoueurs As List(Of Joueur)
 
+    'Evènement du lancement de la fenêtre des scores
     Private Sub Scores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dataJoueurs = getAllJoueurs()
         ordre = CROISSANT
@@ -12,6 +13,7 @@
         initialiserLbxJoueurs()
     End Sub
 
+    'Sub qui trie la liste des joueurs selon l'ordre courant (CROISSANT ou DECROISSANT)
     Private Sub trierJoueurs()
         Dim joueurTmp As Joueur
         For i = 0 To dataJoueurs.Count - 2
@@ -33,6 +35,7 @@
         Next
     End Sub
 
+    'Evènement correspondant au clic sur le bouton de changement d'ordre de tri des joueurs
     Private Sub btnOrdre_Click(sender As Object, e As EventArgs) Handles btnOrdre.Click
         lbxScores.Items.Clear()
         If ordre = CROISSANT Then
@@ -44,6 +47,7 @@
         initialiserLbxJoueurs()
     End Sub
 
+    'Evènement correspondant au clic sur le bouton de retour au menu d'accueil
     Private Sub btnRetour_Click(sender As Object, e As EventArgs) Handles btnRetour.Click
         Me.Close()
         Accueil.Show()
@@ -59,11 +63,13 @@
         End If
     End Sub
 
+    'Evènement qui permet de sélectionner dans la ComboBox le joueur sur lequel on clique dans la ListBox 
     Private Sub lbxScores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbxScores.SelectedIndexChanged
         Dim idx = cbxScores.Items.IndexOf(Split(lbxScores.SelectedItem, " ")(0))
         cbxScores.SelectedIndex = idx
     End Sub
 
+    'Sub qui initialise les valeurs de la ComboBox avec les données des joueurs chargées dans dataJoueurs
     Private Sub initialiserCbxJoueurs()
         cbxScores.Items.Clear()
         For i = 0 To dataJoueurs.Count - 1
@@ -71,6 +77,7 @@
         Next
     End Sub
 
+    'Sub qui initialise les valeurs de la ListBox avec les données des joueurs chargées dans dataJoueurs
     Private Sub initialiserLbxJoueurs()
         lbxScores.Items.Clear()
         For i = 0 To dataJoueurs.Count - 1
