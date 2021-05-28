@@ -6,11 +6,14 @@
     Private imageIndex As Integer = 0
     Private nomImage As String = "Card"
 
+    'Procédure gérant l'évènement Load du formulaire
+    'Récupère les options dans un fichier et les applique
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         optionsValues = loadOptions()
         applyOptions()
     End Sub
 
+    'Procédure permettant d'appliquer les options (les afficher) sur le formulaire
     Private Sub applyOptions()
         txt_TimerMin.Text = optionsValues(1)
         txt_TimerSec.Text = optionsValues(2)
@@ -25,6 +28,7 @@
         End If
     End Sub
 
+    'Fonction permettant de récupérer le préfixe des images à afficher
     Public Function getImageOption() As String
         Dim tmpStr As String()
         Dim image As String
@@ -34,6 +38,7 @@
         Return image
     End Function
 
+    'Fonction permettant de récupérer les options dans un fichier
     Public Function loadOptions()
         Dim tmpStr As String()
         Dim rtTable As List(Of Integer)
@@ -46,6 +51,7 @@
         Return rtTable.ToArray
     End Function
 
+    'Procédure gérant l'évènement click du bouton pour désactiver ou non le timer du jeu
     Private Sub btn_desactiver_Click(sender As Object, e As EventArgs) Handles btn_desactiver.Click
         If timerOn Then
             btn_desactiver.Text = "Activer"
@@ -62,6 +68,7 @@
         End If
     End Sub
 
+    'Procédure gérant l'évènement click du bouton pour quitter le formulaire (bouton "retour")
     Private Sub btn_quitter_Click(sender As Object, e As EventArgs) Handles btn_quitter.Click
         Me.Close()
         Accueil.Show()

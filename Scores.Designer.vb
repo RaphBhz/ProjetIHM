@@ -83,6 +83,8 @@ Partial Class Scores
         Me.Controls.Add(Me.btnRetour)
         Me.Controls.Add(Me.btnOrdre)
         Me.Controls.Add(Me.lbxScores)
+        Me.MaximumSize = New System.Drawing.Size(160, 274)
+        Me.MinimumSize = New System.Drawing.Size(160, 274)
         Me.Name = "Scores"
         Me.Text = "Scores"
         Me.ResumeLayout(False)

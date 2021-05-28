@@ -171,6 +171,7 @@ Partial Class Options
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(631, 342)
+        Me.ControlBox = False
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox4)
@@ -185,6 +186,8 @@ Partial Class Options
         Me.Controls.Add(Me.txt_TimerSec)
         Me.Controls.Add(Me.txt_TimerMin)
         Me.Controls.Add(Me.lbl_Timer)
+        Me.MaximumSize = New System.Drawing.Size(647, 381)
+        Me.MinimumSize = New System.Drawing.Size(647, 381)
         Me.Name = "Options"
         Me.Text = "Options"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()

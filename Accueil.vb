@@ -8,6 +8,8 @@
     Private Sub BtnJouer_Click(sender As Object, e As EventArgs) Handles btnJouer.Click
         If cbxNom.Text.Length < 3 Then
             MsgBox("Entrez un nom d'une longueur minimum de 3 caractères.", vbOKOnly, "Erreur")
+        ElseIf cbxNom.Text.Length > 18 Then
+            MsgBox("Entrez un nom d'une longueur maximum de 18 caractères", vbOKOnly, "Erreur")
         Else
             Me.Hide()
             cbxNom.Items.Add(cbxNom.Text)
@@ -43,6 +45,8 @@
 
     Private Sub btn_options_Click(sender As Object, e As EventArgs) Handles btn_options.Click
         Dim NouvOptions As Options = New Options()
+        Me.Hide()
         NouvOptions.Show()
     End Sub
+
 End Class

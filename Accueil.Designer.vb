@@ -119,6 +119,8 @@ Partial Class Accueil
         Me.Controls.Add(Me.btnJouer)
         Me.Controls.Add(Me.lblDemandeNom)
         Me.Controls.Add(Me.cbxNom)
+        Me.MaximumSize = New System.Drawing.Size(264, 299)
+        Me.MinimumSize = New System.Drawing.Size(264, 299)
         Me.Name = "Accueil"
         Me.Text = "Memory"
         Me.ResumeLayout(False)
