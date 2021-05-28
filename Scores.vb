@@ -5,6 +5,8 @@
     Private dataJoueurs As List(Of Joueur)
 
     'Evènement du lancement de la fenêtre des scores
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub Scores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dataJoueurs = getAllJoueurs()
         ordre = CROISSANT
@@ -36,6 +38,8 @@
     End Sub
 
     'Evènement correspondant au clic sur le bouton de changement d'ordre de tri des joueurs
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub btnOrdre_Click(sender As Object, e As EventArgs) Handles btnOrdre.Click
         lbxScores.Items.Clear()
         If ordre = CROISSANT Then
@@ -48,10 +52,16 @@
     End Sub
 
     'Evènement correspondant au clic sur le bouton de retour au menu d'accueil
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub btnRetour_Click(sender As Object, e As EventArgs) Handles btnRetour.Click
         Me.Close()
         Accueil.Show()
     End Sub
+
+    'Sub qui permet d'afficher les statistiques d'un joueur précis
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub btnVoir_Click(sender As Object, e As EventArgs) Handles btnVoir.Click
         Dim idx = dataJoueurs.FindIndex(Function(j As Joueur) j.GetNom() = cbxScores.Text)
         If idx = -1 Then
@@ -64,6 +74,8 @@
     End Sub
 
     'Evènement qui permet de sélectionner dans la ComboBox le joueur sur lequel on clique dans la ListBox 
+    '@param sender la source de l'event
+    '@param e les arguments liés à l'event
     Private Sub lbxScores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbxScores.SelectedIndexChanged
         Dim idx = cbxScores.Items.IndexOf(Split(lbxScores.SelectedItem, " ")(0))
         cbxScores.SelectedIndex = idx
