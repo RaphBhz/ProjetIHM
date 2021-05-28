@@ -17,6 +17,7 @@
     End Sub
 
     'Constructeur de la classe joueur
+    '@param nouvNom : String Le nom du nouveau joueur
     Public Sub New(nouvNom As String)
         nom = nouvNom
         scoreMax = 0
@@ -26,12 +27,16 @@
     End Sub
 
     'Sub qui remplace le meilleur score du joueur ainsi que le temps associé au score
+    '@param score : Integer Le nouveau meilleur score
+    '@param time : Interger Le remps associé au score
     Public Sub setBestScore(score As Integer, time As Integer)
         Me.scoreMax = score
         Me.tempsMin = time
     End Sub
 
     'Fonnction qui vérifie si un score entré est meilleur que le meilleur score d'un joueur
+    '@param score le score à comparer
+    '@param time le temps à comparer
     '@return Boolean True si le score est meilleur False sinon
     Public Function isScoreBetter(score As Integer, time As Integer) As Boolean
         If score < scoreMax Then
@@ -47,6 +52,8 @@
     End Function
 
     'Constructeur de la classe joueur qui prend la chaîne de caractères du joueur stocké dans le fichier
+    '@param strJoueur : String La châpine de caractères d'informations sur le joueur enregistrées dans le fichier
+    '@param b : Boolean Permet de différencier de l'autre constructeur
     Public Sub New(strJoueurs As String, b As Boolean)
         Dim tmpStr = Split(strJoueurs, "/")
         nom = tmpStr(0)
