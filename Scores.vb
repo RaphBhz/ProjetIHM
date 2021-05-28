@@ -15,19 +15,21 @@
     Private Sub trierJoueurs()
         Dim joueurTmp As Joueur
         For i = 0 To dataJoueurs.Count - 2
-            If dataJoueurs(i).getScore = dataJoueurs(i + 1).getScore Then
-                If (ordre * (dataJoueurs(i).getTime - dataJoueurs(i + 1).getTime) > 0) Then
-                    joueurTmp = dataJoueurs(i)
-                    dataJoueurs(i) = dataJoueurs(i + 1)
-                    dataJoueurs(i + 1) = joueurTmp
-                    Continue For
+            For j = i To dataJoueurs.Count - 1
+                If dataJoueurs(i).getScore = dataJoueurs(j).getScore Then
+                    If (ordre * (dataJoueurs(j).getTime - dataJoueurs(i).getTime) > 0) Then
+                        joueurTmp = dataJoueurs(i)
+                        dataJoueurs(i) = dataJoueurs(j)
+                        dataJoueurs(j) = joueurTmp
+                    End If
+                Else
+                    If (ordre * (dataJoueurs(j).getScore - dataJoueurs(i).getScore) < 0) Then
+                        joueurTmp = dataJoueurs(i)
+                        dataJoueurs(i) = dataJoueurs(j)
+                        dataJoueurs(j) = joueurTmp
+                    End If
                 End If
-            End If
-            If (ordre * (dataJoueurs(i).getScore - dataJoueurs(i + 1).getScore) < 0) Then
-                joueurTmp = dataJoueurs(i)
-                dataJoueurs(i) = dataJoueurs(i + 1)
-                dataJoueurs(i + 1) = joueurTmp
-            End If
+            Next
         Next
     End Sub
 
